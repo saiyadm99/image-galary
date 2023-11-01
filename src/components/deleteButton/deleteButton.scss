@@ -1,0 +1,14 @@
+.delete-button {
+	background-color: white;
+	border: none;
+	color: #ff0000ee;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	font-size: 16px;
+	font-weight: 700;
+
+	&:hover {
+		color: #ff0000;
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,15 @@
+.selected-count {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin-right: 10px;
+		width: 16px;
+    height: 16px;
+  }
+
+  h2 {
+		font-size: 19px;
+		color: #333;
+  }
+}
