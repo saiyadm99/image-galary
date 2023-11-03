@@ -1,10 +1,10 @@
 import React from 'react';
 import './deleteButton.scss'
 
-function DeleteButton({ onClick }) {
+function DeleteButton({ onClick, count}) {
   return (
     <button className="delete-button" onClick={onClick}>
-      Delete files
+      Delete {count>1 ? "files" : "file"}
     </button>
   );
 }

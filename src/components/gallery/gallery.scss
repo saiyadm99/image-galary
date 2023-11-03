@@ -1,40 +1,40 @@
-$borderColor: #ddd;
+$borderColor: #ddd; // Define a variable for border color
 
 .gallery-container {
-	display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); // Apply a shadow effect
+  border-radius: 10px; // Add rounded corners
 }
 
 .gallery-top {
-	display: flex;
-	width: 100%;
-	padding: 5px 40px 5px 40px;
-  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  padding: 5px 40px 5px 40px; // Add padding on all sides
+  box-sizing: border-box; // Include padding in the width calculation
 }
 
 .action-bar {
-	display: flex;
-	width: 100%;
-  justify-content: space-between;
-  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-between; // Space between elements
+  align-items: center; // Center align items vertically
 }
 
 .image-gallery {
-	padding: 40px;
-	border-top: 2px solid $borderColor;
+  padding: 40px;
+  border-top: 2px solid $borderColor; // Add a border on top with the defined border color
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
+  grid-template-columns: repeat(5, 1fr); // Create a grid with 5 equal columns
+  grid-gap: 20px; // Define the gap between grid items
 
-	.large-image {
-		grid-column: span 2;
-		grid-row: span 2;
-	}
+  .large-image {
+    grid-column: span 2; // A large image spans 2 columns
+    grid-row: span 2; // A large image spans 2 rows
+  }
 
   .image-container {
     position: relative;
@@ -48,61 +48,67 @@ $borderColor: #ddd;
       background-color: #fff;
       border: 1px solid #ccc;
       border-radius: 3px;
-      transition: 0.4s;
+      transition: 0.4s; // Smooth transition for checkbox
       z-index: 1;
-      opacity: 0;
+      opacity: 0; // Initially hidden
     }
 
     img {
       background-color: #fff;
       border-radius: 10px;
-      border: 2px solid $borderColor;
+      border: 2px solid $borderColor; // Apply a border with the defined border color
       text-align: center;
       max-width: 100%;
       max-height: 100%;
-      transition: 0.4s;
+      transition: 0.4s; // Smooth transition for image
     }
 
-
-		.image-label {
-			&:hover {
-				.image-checkbox {
-					opacity: 1;
-				}
-		
-				img {
-					filter: brightness(50%);
-					border: 2px solid #fff;
-				}
-			}
-		
-			.image-checkbox:checked {
-				opacity: 1;
-				& ~ img { // Apply styles to adjacent img when checkbox is checked
-          filter: brightness(100%); // Reset brightness
-          border: 2px solid $borderColor; // Reset border
-					opacity: 0.50;
+    .image-label {
+      &:hover {
+        .image-checkbox {
+          opacity: 1; // Show checkbox on hover
         }
-			}
-		}
+
+        img {
+          filter: brightness(50%); // Reduce brightness on hover
+          border: 2px solid #fff; // Change the border color on hover
+        }
+      }
+
+      .image-checkbox:checked {
+        opacity: 1; // Show checkbox when checked
+        & ~ img {
+          filter: brightness(100%); // Reset brightness
+          border: 2px solid $borderColor; // Reset border color
+          opacity: 0.50; // Reduce opacity when checked
+        }
+      }
+    }
   }
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(5, 1fr); /* 5 images in a column */
-  }
-
-  @media (min-width: 601px) and (max-width: 767px) {
-    grid-template-columns: repeat(4, 1fr); /* 4 images in a column */
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr); // 4 images in a column on smaller screens
   }
 
   @media (max-width: 600px) {
-    grid-template-columns: repeat(2, 1fr); /* 2 images in a column */
+    grid-template-columns: repeat(2, 1fr); // 2 images in a column on even smaller screens
   }
 }
 
-
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .gallery-container {
-    width: 90%;
+    width: 70%; // Adjust container width on smaller screens
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery-container {
+    width: 80%; // Adjust container width on even smaller screens
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-container {
+    width: 90%; // Adjust container width on the smallest screens
   }
 }
