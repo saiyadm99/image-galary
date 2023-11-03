@@ -4,7 +4,7 @@ This is a responsive image gallery project built using React JS. It features a g
 
 ## Demo
 
-You can view a [live demo of the project here](https://).
+You can view a [live demo of the project here](https://gallery-app-assignment.netlify.app/).
 
 ## Features
 
